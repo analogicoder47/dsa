@@ -9,27 +9,27 @@ using namespace std;
 
 class Session {
 public:
-    string getSvrIP() const;
-    void   setSvrIP(const string);
+    string get_svrip() const;
+    void   set_svrip(const string);
 
-    int    getSvrPort() const;
-    void   setSvrPort(const int);
+    int    get_svrport() const;
+    void   set_svrport(const int);
 
-    int    getBacklog() const;
-    void   setBacklog(const int);
+    int    get_backlog() const;
+    void   set_backlog(const int);
 
-    string getSndrCompID() const;
-    void   setSndrCompID(const string);
+    string get_sndr_compid() const;
+    void   set_sndr_compid(const string);
 
-    vector<BrokerInfo> getBrokerList() const;
-    void               setBrokerList(const vector<BrokerInfo>);
+    vector<BrokerInfo> get_bkrlist() const;
+    void               set_bkrlist(const vector<BrokerInfo>);
 
 private:
-    string             svrIP;
-    int                svrPort;
+    string             svrip;
+    int                svrport;
     int                backlog;
-    string             sndrCompID;    
-    vector<BrokerInfo> brokerList;
+    string             sndr_compid; 
+    vector<BrokerInfo> bkrlist;
 };
 
 #endif

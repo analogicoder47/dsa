@@ -2,42 +2,42 @@
 
 using namespace std;
 
-string Session::getSvrIP() const {
-    return svrIP;
+string Session::get_svrip() const {
+    return svrip;
 }
 
-void Session::setSvrIP(const string ip) {
-    svrIP = ip;
+void Session::set_svrip(const string ip) {
+    svrip = ip;
 }
 
-int Session::getSvrPort() const {
-    return svrPort;
+int Session::get_svrport() const {
+    return svrport;
 }
 
-void Session::setSvrPort(const int port) {
-    svrPort = port;
+void Session::set_svrport(const int port) {
+    svrport = port;
 }
 
-int Session::getBacklog() const {
+int Session::get_backlog() const {
     return backlog;
 }
 
-void Session::setBacklog(const int backlog) {
+void Session::set_backlog(const int backlog) {
     this->backlog = backlog;
 }
 
-string Session::getSndrCompID() const {
-    return sndrCompID;
+string Session::get_sndr_compid() const {
+    return sndr_compid;
 }
 
-void Session::setSndrCompID(const string compID) {
-    sndrCompID = compID;
+void Session::set_sndr_compid(const string compid) {
+    sndr_compid = compid;
 }
 
-vector<BrokerInfo> Session::getBrokerList() const {
-    return brokerList;
+vector<BrokerInfo> Session::get_bkrlist() const {
+    return bkrlist;
 }
 
-void Session::setBrokerList(const vector<BrokerInfo> list) {
-    brokerList = list;
+void Session::set_bkrlist(const vector<BrokerInfo> list) {
+    bkrlist = list;
 }

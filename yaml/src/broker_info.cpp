@@ -2,42 +2,42 @@
 
 using namespace std;
 
-string BrokerInfo::getIP() const {
+string BrokerInfo::get_ip() const {
     return ip;
 }
 
-void BrokerInfo::setIP(const string ip) {
+void BrokerInfo::set_ip(const string ip) {
     this->ip = ip;
 }
 
-int BrokerInfo::getPort() const {
+int BrokerInfo::get_port() const {
     return port;
 }
 
-void BrokerInfo::setPort(const int port) {
+void BrokerInfo::set_port(const int port) {
     this->port = port;
 }
 
-string BrokerInfo::getTargetCompID() const {
-    return targetCompID;
+string BrokerInfo::get_target_compid() const {
+	return target_compid;
 }
 
-void BrokerInfo::setTargetCompID(const string targetCompID) {
-    this->targetCompID = targetCompID;
+void BrokerInfo::set_target_compid(const string target_compid) {
+    this->target_compid = target_compid;
 }
 
-int BrokerInfo::getExpSeqno() const {
-    return expectedSeqno;
+int BrokerInfo::get_exp_seqno() const {
+    return exp_seqno;
 }
 
-void BrokerInfo::setExpSeqno(const int seqno) {
-    this->expectedSeqno = seqno;
+void BrokerInfo::set_exp_seqno(const int seqno) {
+    this->exp_seqno = seqno;
 }
 
-int BrokerInfo::getPasswd() const {
+int BrokerInfo::get_passwd() const {
     return passwd;
 }
 
-void BrokerInfo::setPasswd(const int passwd) {
+void BrokerInfo::set_passwd(const int passwd) {
     this->passwd = passwd;
 }

@@ -7,26 +7,26 @@ using namespace std;
 
 class BrokerInfo {
 public:
-	string getIP() const;
-	void   setIP(const string);
+	string get_ip() const;
+	void   set_ip(const string);
 
-	int    getPort() const;
-	void   setPort(const int);
+	int    get_port() const;
+	void   set_port(const int);
 
-	string getTargetCompID() const;
-	void   setTargetCompID(const string);
+	string get_target_compid() const;
+	void   set_target_compid(const string);
 
-	int    getExpSeqno() const;
-	void   setExpSeqno(const int);
+	int    get_exp_seqno() const;
+	void   set_exp_seqno(const int);
 
-	int    getPasswd() const;
-	void   setPasswd(const int);
+	int    get_passwd() const;
+	void   set_passwd(const int);
 
 private:
 	string  ip;
 	int     port;
-	string  targetCompID;
-	int     expectedSeqno;
+	string  target_compid;
+	int     exp_seqno;
 	int     passwd;
 };
 

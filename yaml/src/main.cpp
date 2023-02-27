@@ -10,21 +10,21 @@ namespace YAML {
 	struct convert<BrokerInfo> {
 		static Node encode(const BrokerInfo &rhs) {
 			Node node;
-			node.push_back(rhs.getIP() );
-			node.push_back(rhs.getPort() );
-			node.push_back(rhs.getTargetCompID() );
-			node.push_back(rhs.getExpSeqno() );
-			node.push_back(rhs.getPasswd() );
+			node.push_back(rhs.get_ip() );
+			node.push_back(rhs.get_port() );
+			node.push_back(rhs.get_target_compid() );
+			node.push_back(rhs.get_exp_seqno() );
+			node.push_back(rhs.get_passwd() );
 
 			return node;
 		}
 
 		static bool decode(const Node &node, BrokerInfo &rhs) {
-			rhs.setIP(node["brkr_ip"].as<string>() );
-			rhs.setPort(node["brkr_port"].as<int>() );
-			rhs.setTargetCompID(node["target_comp_id"].as<string>() );
-			rhs.setExpSeqno(node["expected_seqno"].as<int>() );
-			rhs.setPasswd(node["passwd"].as<int>() );
+			rhs.set_ip(node["bkr_ip"].as<string>() );
+			rhs.set_port(node["bkr_port"].as<int>() );
+			rhs.set_target_compid(node["target_compid"].as<string>() );
+			rhs.set_exp_seqno(node["expected_seqno"].as<int>() );
+			rhs.set_passwd(node["passwd"].as<int>() );
 
 			return true;
 		}
@@ -34,21 +34,21 @@ namespace YAML {
 	struct convert<Session> {
 		static Node encode(const Session &rhs) {
 			Node node;
-			node.push_back(rhs.getSvrIP() );
-			node.push_back(rhs.getSvrPort() );
-			node.push_back(rhs.getBacklog() );
-			node.push_back(rhs.getSndrCompID() );
-			node.push_back(rhs.getBrokerList() );
+			node.push_back(rhs.get_svrip() );
+			node.push_back(rhs.get_svrport() );
+			node.push_back(rhs.get_backlog() );
+			node.push_back(rhs.get_sndr_compid() );
+			node.push_back(rhs.get_bkrlist() );
 			
 			return node;
 		}
 
 		static bool decode(const Node &node, Session &rhs) {
-			rhs.setSvrIP(node["svr_ip"].as<string>() );
-			rhs.setSvrPort(node["svr_port"].as<int>() );
-			rhs.setBacklog(node["backlog"].as<int>() );
-			rhs.setSndrCompID(node["sndr_comp_id"].as<string>() );
-			rhs.setBrokerList(node["brkr_list"].as<vector<BrokerInfo>>() );
+			rhs.set_svrip(node["svr_ip"].as<string>() );
+			rhs.set_svrport(node["svr_port"].as<int>() );
+			rhs.set_backlog(node["backlog"].as<int>() );
+			rhs.set_sndr_compid(node["sndr_compid"].as<string>() );
+			rhs.set_bkrlist(node["bkr_list"].as<vector<BrokerInfo>>() );
 
 			return true;
 		}
@@ -64,21 +64,21 @@ int main(int argc, const char** argv)
 	if (config["sessions"]) {
 		cout << "session size: " << config["sesions"].size() << endl << endl;
 
-		vector<Session> sessionList = config["sessions"].as<vector<Session>>();
+		vector<Session> sessionlist = config["sessions"].as<vector<Session>>();
 
-		for (vector<Session>::iterator session = sessionList.begin(); session != sessionList.end(); session++) {
-			cout << "session server ip: "      << session->getSvrIP()      << endl;
-			cout << "session server port: "    << session->getSvrPort()    << endl;
-			cout << "session server backlog: " << session->getBacklog()    << endl;
-			cout << "session server compID: "  << session->getSndrCompID() << endl;
+		for (vector<Session>::iterator session = sessionlist.begin(); session != sessionlist.end(); session++) {
+			cout << "session server ip: "      << session->get_svrip()       << endl;
+			cout << "session server port: "    << session->get_svrport()     << endl;
+			cout << "session server backlog: " << session->get_backlog()     << endl;
+			cout << "session server compID: "  << session->get_sndr_compid() << endl;
 
-			vector<BrokerInfo> brokerList = session->getBrokerList();
-			for (vector<BrokerInfo>::iterator broker = brokerList.begin(); broker != brokerList.end(); broker++) {
-				cout << "   broker ip: "     << broker->getIP()            << endl;
-				cout << "   broker port: "   << broker->getPort()          << endl;
-				cout << "   broker compID: " << broker->getTargetCompID()  << endl;
-				cout << "   broker seqno: "  << broker->getExpSeqno()      << endl;
-				cout << "   broker passwd: " << broker->getPasswd()        << endl;
+			vector<BrokerInfo> bkrlist = session->get_bkrlist();
+			for (vector<BrokerInfo>::iterator broker = bkrlist.begin(); broker != bkrlist.end(); broker++) {
+				cout << "   broker ip: "     << broker->get_ip()            << endl;
+				cout << "   broker port: "   << broker->get_port()          << endl;
+				cout << "   broker compID: " << broker->get_target_compid() << endl;
+				cout << "   broker seqno: "  << broker->get_exp_seqno()     << endl;
+				cout << "   broker passwd: " << broker->get_passwd()        << endl;
 
 				cout << "\n" << endl;
 			}

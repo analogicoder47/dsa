@@ -3,36 +3,36 @@ sessions:
    - svr_ip: 192.168.0.11
      svr_port: 44007
      backlog: 4
-     sndr_comp_id: XTAI
+     sndr_compid: XTAI
 
-     brkr_list:
-       - brkr_ip: 192.168.0.12
-         brkr_port: 55009
-         target_comp_id: T7790a1
+     bkr_list:
+       - bkr_ip: 192.168.0.12
+         bkr_port: 55009
+         target_compid: T7790a1
          expected_seqno: 1
          passwd: 2929
 
-       - brkr_ip: 192.168.0.12
-         brkr_port: 55019
-         target_comp_id: T7792x1
+       - bkr_ip: 192.168.0.12
+         bkr_port: 55019
+         target_compid: T7792x1
          expected_seqno: 1
          passwd: 3929
 
    - svr_ip: 192.168.0.11
      svr_port: 44017
      backlog: 4
-     sndr_comp_id: ROCO
+     sndr_compid: ROCO
 
-     brkr_list:
-       - brkr_ip: 192.168.0.12
-         brkr_port: 33009
-         target_comp_id: O7790b1
+     bkr_list:
+       - bkr_ip: 192.168.0.12
+         bkr_port: 33009
+         target_compid: O7790b1
          expected_seqno: 1
          passwd: 3029
 
-       - brkr_ip: 192.168.0.12
-         brkr_port: 33019
-         target_comp_id: O7792y1
+       - bkr_ip: 192.168.0.12
+         bkr_port: 33019
+         target_compid: O7792y1
          expected_seqno: 1
          passwd: 3039
 ...
